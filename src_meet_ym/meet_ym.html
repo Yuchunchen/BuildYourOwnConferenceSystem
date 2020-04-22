@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>陽明大學視訊會議系統</title>
+  <script>
+      // redirect to browser site 
+
+      (function () {var a={};var f=/iPhone/i,h=/iPod/i,i=/iPad/i,r=/\biOS-universal(?:.+)Mac\b/i,g=/\bAndroid(?:.+)Mobile\b/i,j=/Android/i,c=/(?:SD4930UR|\bSilk(?:.+)Mobile\b)/i,d=/Silk/i,b=/Windows Phone/i,k=/\bWindows(?:.+)ARM\b/i,m=/BlackBerry/i,n=/BB10/i,o=/Opera Mini/i,p=/\b(CriOS|Chrome)(?:.+)Mobile/i,q=/Mobile(?:.+)Firefox\b/i;function s(l){return function($){return $.test(l)}}function e(l){var $=(l=l||("undefined"!=typeof navigator?navigator.userAgent:"")).split("[FBAN");void 0!==$[1]&&(l=$[0]),void 0!==($=l.split("Twitter"))[1]&&(l=$[0]);var a=s(l),e={apple:{phone:a(f)&&!a(b),ipod:a(h),tablet:!a(f)&&a(i)&&!a(b),universal:a(r),device:(a(f)||a(h)||a(i))&&!a(b)},amazon:{phone:a(c),tablet:!a(c)&&a(d),device:a(c)||a(d)},android:{phone:!a(b)&&a(c)||!a(b)&&a(g),tablet:!a(b)&&!a(c)&&!a(g)&&(a(d)||a(j)),device:!a(b)&&(a(c)||a(d)||a(g)||a(j))||a(/\bokhttp\b/i)},windows:{phone:a(b),tablet:a(k),device:a(b)||a(k)},other:{blackberry:a(m),blackberry10:a(n),opera:a(o),firefox:a(q),chrome:a(p),device:a(m)||a(n)||a(o)||a(q)||a(p)},any:!1,phone:!1,tablet:!1};return e.any=e.apple.universal||e.apple.device||e.android.device||e.windows.device||e.other.device,e.phone=e.apple.phone||e.android.phone||e.windows.phone,e.tablet=e.apple.tablet||e.android.tablet||e.windows.tablet,e}a=e();if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=a}else if(typeof define==="function"&&define.amd){define(function(){return a})}else{this["isMobile"]=a}})();
+
+      // My own arbitrary use of isMobile, as an example
+      (function() {
+        var MOBILE_SITE = './meet_ym_browser.html', // site to redirect to
+          NO_REDIRECT = 'noredirect'; // cookie to prevent redirect
+
+        // I only want to redirect iPhones, Android phones
+        if (isMobile.apple.phone || isMobile.android.phone) {
+          // Only redirect if the user didn't previously choose
+          // to explicitly view the full site. This is validated
+          // by checking if a "noredirect" cookie exists
+          if (document.cookie.indexOf(NO_REDIRECT) === -1) {
+            document.location = MOBILE_SITE;
+          }
+        }
+      })();
+
+  </script>
+  
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+    type="text/css" />
+  <script src="libs/qrcode.min.js"></script>
+  <script src='https://meet.jit.si/external_api.js'></script>
+  <link href="css/styles.css" rel="stylesheet" />
+  
+  <script>
+    var lectureroom;
+    var lecturename;
+    var lecturepass;
+    var lectureJID;
+
+    function openlectureroom() {
+      console.log("here i am");
+      var jitsiloader = document.querySelector('#jitsiloader');
+      jitsiloader.className += " mywaiting";
+
+
+      var msg_for_jitsi = document.querySelector('#msg_for_jitsi');
+      msg_for_jitsi.innerHTML=
+      "稍待幾秒鐘後，右邊應該會出現視訊畫面:"+
+      "    <ol>" +
+      "      <li>第一次進入時，系統會要求您輸入開會專用帳號密碼，才能順利舉辦視訊會議。</li>" +
+      "      <li>您是這次視訊會議管理者，請務必<span class=text-danger>設定密碼</span>，以避免會議無關人員進入，影響會議進行。</li>" +
+      "      <li>您也可以按下視訊螢幕<span class='text-danger'>右下角(i)按鈕</span>設定密碼。</li>" +
+      "      <li>當所有人都離開會議室時，此會議連結立即銷毀以保護個人隱私。</li>" +
+      "      <li>這是陽明大學愛家實驗室因應疫情為陽明大學客製化系統，我們不會留下任何紀錄，請您放心。</li>" +
+      "    </ol>";
+
+      lecturename = document.querySelector('#lecturename').value;
+      lectureJID = getroomJID(lecturename);
+      if (lecturename && lecturename.replace(/\s/g, "")) {
+        lecturename = lecturename.replace(/\s/g, "")
+        const domain = 'jitsiym.aigia.ai';
+        const options = {
+          roomName: lectureJID,
+          width: 600,
+          height: 400,
+          parentNode: document.querySelector('#jitsiroom')
+        };
+        lectureroom = new JitsiMeetExternalAPI(domain, options);
+        //lecturepass = lecturepass ? "" : lecturepass.replace(/\s/g, "");
+        lectureroom.executeCommand('displayName', lecturename);
+        lectureroom.executeCommand('subject', lecturename);
+        console.log(lectureJID)
+      } else {
+        alert("請務必輸入會議名稱(中英文皆可)")
+      }
+      return false;
+    }
+
+      function genlecturemessage(){
+
+        jitsiloader.className= jitsiloader.className.replace("mywaiting", "");
+        var message = "";
+
+        lecturepass = document.querySelector('#lecturepass').value;
+        if (lecturepass && lecturepass.replace(/\s/g, "")) {
+          lecturepass = lecturepass.replace(/\s/g, "")
+          lectureroom.executeCommand('password', lecturepass);
+          message="本次會議密碼為: <span class=text-danger>" + lecturepass  +"</span>";
+        } else {
+          message="本次會議<span class=text-danger>無需密碼即可進入</span>";
+        }
+
+        const label_message = document.getElementById("lecturemessage");
+        label_message.innerHTML = "您好，<br>「"+lecturename + "」視訊會議室建立成功，" + message + 
+          "，您可以點擊下列連結： (桌機/筆記型電腦)<a href=https://jitsiym.aigia.ai/" + lectureJID + ">https://jitsiym.aigia.ai/"+lectureJID  +"</a>或<br>"+
+          "(手機/平板)<a href='org.jitsi.meet://jitsiym.aigia.ai/" + lectureJID + "'>org.jitsi.meet://jitsiym.aigia.ai/"+lectureJID  +"</a>或<br>" + 
+          "掃描QR-Code進入會議室。 ";
+        genQRcode("lectureqrcode", "org.jitsi.meet://jitsiym.aigia.ai/" + lectureJID);
+        
+        return false;
+      }
+
+      function getroomJID(roomname){
+        encodestring = encodeURI(roomname);
+        var jitsi_room_number=paddingLeft(hashFn(encodestring).toString(), 10);
+        console.log(jitsi_room_number);
+        return jitsi_room_number
+      }
+
+      function paddingLeft(str,length){
+          if(str.length >= length)
+          return str;
+          else
+          return paddingLeft("0" +str,length);
+        }
+
+      function hashFn(str) {
+          var hash = 5381, i = str.length;
+          while(i) {
+            hash = (hash * 33) ^ str.charCodeAt(--i);
+          }
+
+            /* JavaScript does bitwise operations (like XOR, above) on 32-bit signed
+            * integers. Since we want the results to be always positive, convert the
+            * signed int to an unsigned by doing an unsigned bitshift. */
+          return hash >>> 0;
+        }
+
+    function genQRcode(srcID, thestring) {
+      var qrcode = new QRCode(document.getElementById(srcID), {
+        text: thestring,
+        width: 128,
+        height: 128,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H,
+      });
+    }
+
+    window.onresize = function(event) {
+    $("#myym").css("width", $(window).width());
+    }
+  </script>
+</head>
+
+<body id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">陽明大學視訊會議系統</a><button
+        class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+        type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+        Menu <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#lecture">開會囉</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#joinlecture">參加會議</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#aboutSystem">關於系統</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#aboutAIGIA">關於愛家實驗室</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Masthead-->
+  <header class="masthead bg-primary text-center myym">
+    <div class="container d-flex align-items-center flex-column pr-0 ">
+      <!-- Masthead Avatar Image-->
+      <img class="masthead-avatar mb-5" src="imgs/img/avataaars.svg" alt="" />
+      <!-- Masthead Heading-->
+      <h1 class="masthead-heading text-uppercase text-primary ">
+        陽明大學。愛家實驗室。Jitsi
+      </h1>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+      </div>
+    </div>
+  </header>
+  <!-- Lecture Section-->
+  <section class="page-section" id="lecture">
+    <div class="container">
+      <!-- Icon Divider-->
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <h1><i class="fas fa-chalkboard-teacher"></i></h1>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+      <!-- Contact Section Heading-->
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+        我要開會！
+      </h2>
+      <!-- entry Form-->
+      <div class="row">
+        <div class="col-lg-7 mx-auto">
+          <p></p>
+          <h3>STEP1.</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 mx-auto rounded border border-info">
+          <form id="lectureForm" name="lectureForm" novalidate="validate">
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                <label>會議名稱</label>
+                <input class="form-control" id="lecturename" type="text" placeholder="請輸入會議名稱(中英文皆可)" required="required"
+                  data-validation-required-message="請輸入會議名稱" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-7 mx-auto">
+          <h3>STEP2.</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col align-items-center text-center  ">
+          輸入會議名稱後，請按這裏<button class="btn btn-outline-dark" onclick="return openlectureroom()" ><i
+              class="fas fa-broadcast-tower mr-2"></i>開啟視訊會議室</button>
+        </div>
+      </div>
+      </form>
+      <div class="row">
+        <div class="col-lg-7 mx-auto">
+          <h3>STEP3.</h3>
+        </div>
+      </div>
+      <div class="row ">
+        <div id="msg_for_jitsi"  class="col-lg-5 mr-0 pr-0">
+        </div>
+        <div id=jitsiloader class="col-lg-7 mx-auto pl-1 border-light rounded border ">
+          <div id="jitsiroom" class="col"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-7 mx-auto">
+          <h3>STEP4.</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 mx-auto rounded border border-alert">
+          <div class=row>
+            <div class=col-lg-8>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                  <label>課程密碼</label>
+                  <input class="form-control" id="lecturepass" type="text" placeholder="強烈建議設定密碼"
+                    data-validation-required-message="請設定密碼" />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 ml-0 pl-0">
+              <button class="btn btn-xl btn-outline-dark" onclick="return genlecturemessage();" >
+                設定密碼以及會議通知</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-lg-12 text-center">
+        （您可將下列訊息複製寄送給與會同仁)
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-lg-6 mx-auto ">
+        <p><span id="lecturemessage" class="lead"></span></p>
+        <p class=text-center><span id="lectureqrcode"></span></p>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </section>
+  <!--JointLecture Section-->
+  <section class="page-section bg-primary text-white mb-0" id="joinlecture">
+    <div class="container">
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <i class="fas fa-book-reader"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+      <!-- join lecture Heading-->
+      <h2 class="page-section-heading text-center text-uppercase text-white">
+        開會去
+      </h2>
+      <!-- join lecture Content-->
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <p class="lead">手機桌機攏ㄟ通，我們提供多種使用者友善連線方法，您可以依照您的需求、環境與設備選擇最適合您的方式參與會議。(<a class="text-dark" href='YM_JITSI_操作說明.pdf'>使用說明</a>)</p>
+        </div>
+      </row>
+      <div class="row">
+        <div class="col-lg-5 mx-auto text-left">
+          <div class=row><div class="col text-center">
+            <h3>我想使用手機/平板開會</h3>
+          </div></div>
+          <div class=row><div class="col text-left">
+               1. 請先安裝視訊會議用APP (掃描QR-Code)
+          </div></div>
+          <div class=row>
+            <div class="col-lg-6 text-center">
+            <p>蘋果iOS: <br>
+              <a href="https://itunes.apple.com/tw/app/jitsi-meet/id1165103905" rel="noopener" target="_blank">
+                <img  src="images/welcome_page/applestore_qrcode.png" width="200">              </a>
+            </p>
+              <p><a href="https://itunes.apple.com/tw/app/jitsi-meet/id1165103905" rel="noopener" target="_blank">
+                <img class=myimg src="images/welcome_page/appstore.svg">              </a></p>
+            </div>
+            <div class="col-lg-6  text-center">
+              <p>安卓Android: <br>
+                <a href="https://play.google.com/store/apps/details?id=org.jitsi.meet" rel="noopener" target="_blank">
+                  <img src="images/welcome_page/googleplay_qrcode.png" width="200">
+                </a>
+              </p>
+              <p><a href="https://play.google.com/store/apps/details?id=org.jitsi.meet" rel="noopener" target="_blank">
+                <img height=40 class=myimg src="images/welcome_page/googleplay.png">
+              </a></p>
+            </div>
+          </div>
+          <div class=row><div class="col text-left">
+              2. 掃描會議管理者給您的QR-code開會去！
+          </div></div>
+        </div>
+        <div class="col-lg-5 mx-auto">
+          <div class=row><div class="col text-center">
+          <h3>我想用桌機/筆記型電腦</h3></div></div>
+          <div class=row><div class="col text-left">
+          <p>您不需要另外安裝軟體，打開瀏覽器或直接點擊會議管理者給您的連結就可以開會去囉！</p>
+          <p>經過測試，我們發現使用Google Chrome瀏覽器參加視訊會議會有最好的使用者感受，如果使用其他瀏覽器有問題的話，建議您可以改用Google Chrome試試看。(<a class="text-dark" href='YM_JITSI_操作說明.pdf'>使用說明在這邊</a>)</p>
+        </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- AboutSystem Section-->
+  <section class="page-section text-secondary mb-0" id="aboutSystem">
+    <div class="container">
+      <!-- About Section Heading-->
+      <h2 class="page-section-heading text-center text-uppercase text-secondary">
+        關於陽明大學視訊會議系統
+      </h2>
+      <!-- Icon Divider-->
+      <div class="divider-custom ">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><img src='images/thesystem.png'></img></div>
+        <div class="divider-custom-line"></div>
+      </div>
+      <!-- About Section Content-->
+      <div class="row">
+        <div class="col-lg-6 mx-auto">
+          <p >
+            「陽明大學視訊會議系統」為醫學系陳育群副教授愛家實驗室團隊為陽明大學客製化開發，以自由開源的跨平台語音、視訊會議和即時通訊應用平台<a href=https://jitsi.org>JITSI meet</a>為基礎，架設安全且隱私的視訊會議系統。(<a href='YM_JITSI_操作說明.pdf'>參考使用說明</a>)</p>
+            <p><img width=100% src='images/thesystem_architecture.png'></p>
+            <p>自由、安全、隱私是此視訊系統設計最重要考量，我們不會收集任何資料，除了Jitis meet系統資訊安全設計(<a href=https://jitsi.org/security>了解更多</a>)外，我們更在陽明視訊會議系統中採取下列設計確保與會者個人隱私：  </p>
+            <ul>
+            <li>主持人身份驗證，可設置會議室密碼，確保會議安全性。</li>
+            <li>不須額外註冊，減少與會者個資外洩風險。</li>
+            <li>所有人離開會議後，會議室自動關閉，連結及密碼均將被重置，維護會議的單一性。</li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- AboutAIGIA Section-->
+  <section class="page-section bg-primary text-white mb-0" id="aboutAIGIA">
+    <div class="container">
+      <!-- About Section Heading-->
+      <h2 class="page-section-heading text-center text-uppercase text-white">
+        關於愛家實驗室
+      </h2>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><img src='images/aigia.png'></img></div>
+        <div class="divider-custom-line"></div>
+      </div>
+      <!-- About Section Content-->
+      <div class="row">
+        <div class="col-lg-6 mx-auto">
+          <p class="lead">
+      「愛家實驗室」是由陽明大學醫學系家庭醫學科陳育群副教授於2016年所創立，
+      秉持著「科技助人」的理念，透過移動科技及人工智慧，將最好的醫療服務帶到每個人家中，
+      為大家解決醫療照護上大大小小問題，共同創造智慧新體驗。(<a class=text-dark href=https://www.aigia.ai>了解更多</a>)
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Copyright Section-->
+  <section class="copyright py-4 text-center text-white">
+    <div class="container"><small>Copyright © 愛家實驗室 2020</small></div>
+  </section>
+  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+  <div class="scroll-to-top d-lg-none position-fixed">
+    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i
+        class="fa fa-chevron-up"></i></a>
+  </div>
+ 
+  <!-- Bootstrap core JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <!-- Third party plugin JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="libs/scripts.js"></script>
+</body>
+
+</html>
