@@ -13,22 +13,22 @@
 
 # 系統操作畫面
 我們將以「陽明大學視訊系統」流程為藍本。
-！[](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen010.png)
+![](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen010.png)
 
-！[](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen020.png)
+![](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen020.png)
 
-！[](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen030.png)
+![](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen030.png)
 
-！[](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen040.png)
+![](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen040.png)
 
-！[](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen041.png)
+![](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen041.png)
 
-！[](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen050.png)
+![](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen050.png)
 
-！[](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen060.png)
+![](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen060.png)
 
 
-！[](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/thesystem_architecture.png.png)
+![](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/thesystem_architecture.png.png)
 
 
 
