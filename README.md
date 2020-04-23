@@ -7,25 +7,27 @@
 
 使用「快速架站懶人包」將有下列好處：
 ### 學校機關系統管理者 
-免費軟體安裝不易，是管理者心中痛點。我們提供本機、雲端(Google cloud 與 Azure)多種安裝方式、您僅需要照著網頁操作，簡單修改原始碼就可以替單位架設一套免費、安全隱密的會議系統，還可以依照您的需求自行延伸加上會議錄影、錄音字幕等等功能。
+免費軟體安裝不易，是管理者心中痛點。我們提供本機、雲端(Google cloud 與 Azure)多種安裝方式、您僅需要照著網頁操作，簡單修改原始碼就可以替單位架設一套免費、安全隱密的會議系統，還可以依照您的需求自行延伸加上傳送開會通知、會議錄影、錄音字幕等等功能。
 ### 視訊會議使用者
-與會者一直遲遲無法加入會議，是視訊會議最常見的痛點，我們將常見的視訊會議流程簡化為4個步驟，會議管理者僅需要照著網頁提示即可開啟會議。視訊會議參與者不需高檔配備，僅需用手機掃條碼便可即時參加會議，讓視訊會議流程最通暢。
+與會者一直遲遲無法加入會議，是視訊會議最常見的痛點，我們將常見的視訊會議流程簡化為4個步驟，會議管理者僅需要照著網頁提示即可開啟會議、自動產生開會通知。視訊會議參與者不需高檔配備，僅需用手機掃條碼便可即時參加會議，讓視訊會議流程最通暢。
 
 # 系統操作畫面
 我們將以「陽明大學視訊系統」流程為藍本。
-![](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen010.png)
+![系統首頁](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen010.png)
 
-![](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen020.png)
+![視訊會議步驟1](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen020.png)
 
-![](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen030.png)
+![視訊會議步驟2](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen030.png)
 
-![](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen040.png)
+![視訊會議步驟-設定密碼、開會通知](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen031.png)
 
-![](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen041.png)
+![視訊會議與會](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen040.png)
 
-![](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen050.png)
+![視訊會議異地開會](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen041.png)
 
-![](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen060.png)
+![系統說明](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen050.png)
+
+![團隊](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/desktop_screen060.png)
 
 
 ![](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/thesystem_architecture.png.png)
