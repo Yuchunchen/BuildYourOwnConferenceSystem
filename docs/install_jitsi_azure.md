@@ -36,17 +36,28 @@ alt="Azure VM" width=80% border="10" /></a>
 
 ## 3. 安裝 Jitsi meet 前置準備
 1. 您可以由畫面上面的連結(SSH 登入) 或者 左下角(序列主控台登入)
-![登入]](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/install_jitsi_azure_0020.png)
+![登入](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/install_jitsi_azure_0020.png)
 
 2. 系統更新
-   * 更新 apt
-```zsh
+   1. 更新 apt
+```bash
 sudo apt update && 
 sudo apt upgrade && 
 sudo apt-get update && 
 sudo apt-get install sshfs
 ```
-   * 安裝 nano
-```zsh
+   2. 安裝 nano
+```bash
 sudo apt-get install nano
+```
+   3. 下載安裝標準 linux 核心
+      * 下載  linux image
+```bash
+sudo apt-get -y install linux-image-generic &&
+sudo update-grub
+```
+      * 設定 linux image
+      
+```bash
+sudo nano /etc/default/grub
 ```
