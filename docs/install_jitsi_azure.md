@@ -56,8 +56,15 @@ sudo apt-get install nano
 sudo apt-get -y install linux-image-generic &&
 sudo update-grub
 ```
-      * 設定 linux image
-      
+      * 開啟 `/etc/default/grub` 
 ```bash
 sudo nano /etc/default/grub
 ```
+      * 設定 linux image
+      找到**GRUB_DEFAULT**，並修改為如下，Ctrl-X存檔
+      GRUB_DEFAULT='1>2'
+      * 重新開機
+```bash
+sudo reboot now
+```
+
