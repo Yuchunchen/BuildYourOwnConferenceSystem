@@ -67,7 +67,9 @@ sudo nano /etc/default/grub
 sudo reboot now
 ```
 
-3. 下載 Jitsi 安裝程式
+## 4. 安裝 Jitsi meet 
+
+1. 下載 Jitsi 安裝程式
 雖然官方網站已提供安裝說明，但是仍有許多地方需要手工設定，經過測試，[SwITNet](https://github.com/switnet-ltd/quick-jibri-installer)所提供的快速安裝程序，可以省下不少設定帶來的挫折。
 ```bash
 wget https://raw.githubusercontent.com/switnet-ltd/quick-jibri-installer/master/jigasi.sh &&
@@ -82,28 +84,50 @@ chmod +x jra_nextcloud.sh &&
 chmod +x quick_jibri_installer.sh 
 ```
 
-4. 執行 quick_jibri_installer.sh
+2. 執行 quick_jibri_installer.sh
 ```bash
 sudo ./quick_jibri_installer.sh
 ```
-經過一小段時間下載更新後，接著我們要進行基本設定:
+
+3. 經過一小段時間下載更新後，接著我們要進行基本設定:
 
 |   |提示|說明|建議回答|備註|
 |---|---|---|-------|---|
 |1.|Please set your language (Press enter to default to 'en')|選擇預設語系|zhTW|選擇中文，注意大小寫需一致)|
-|2.|Set sysadmin email|管理者電子郵件｜...|此為必須欄位|
-|3.|Do you want to drop support for unsecure protocols TLSv1.0/1.1 now: (yes or no)|是否要停止支援不安全的http協定|yes|我們希望系統僅能透過https加密協定|
+|2.|Set sysadmin email|管理者電子郵件||此為必須欄位|
+|3.|Do you want to drop support for unsecure protocols TLSv1.0/1.1 now: (yes or no)|是否要停止支援不安全的http協定?|yes|我們希望系統僅能透過https加密連線|
 |4.|Do you want to setup LetsEncrypt with your domain: (yes or no)|是否需要SSL加密？|yes||
 |5.|Do you want to setup the Dropbox feature now: (yes or no)|是否需要「錄影上傳dropbox」功能？|no|防止未經允許側錄會議|
 |6.|Do you want to install customized "brandless mode"?: (yes or no)|是否將Jitsi logo刪除？|no|建議保留jitsi logo|
-|7.|Do you want to translate 'Participant' to your own language?<br>Leave empty to use the default one (English):|
+|7.|Do you want to translate 'Participant' to your own language? Leave empty to use the default one (English):|
 請將'Participant'翻譯成您的語言|Participant|不翻譯|
 |8.|Do you want to translate 'me' to your own language?|將 me 翻譯成您的語言|me|不翻譯|
-|9.|Do you want to disable the Welcome page: (yes or no)|是否關閉系統預設之首頁|yes|我們將使用客製化首頁|
-|10.|Do you want to enable static avatar?: (yes or no)|是否使用固定大頭貼|yes|可自行選擇|
+|9.|Do you want to disable the Welcome page: (yes or no)|是否關閉系統預設之首頁?|yes|我們將使用客製化首頁|
+|10.|Do you want to enable static avatar?: (yes or no)|是否使用固定大頭貼?|yes|可自行選擇|
 |11.|Do you want to enable local audio recording option?: (yes or no)|是否開放與會者自行側錄？|no|不允許側錄會議|
 |12.|Do you want to enable secure rooms?: (yes or no)|是否開啟會議室帳號密碼管控？|yes||
 |13.|Set username for secure room moderator:|設定管理者帳號|ymteacher|請自行設定|
 |14.|Secure room moderator password:|管理者密碼|ym1234|請自行設定|
-|15.|Do you want to setup Jibri Records Access via Nextcloud: (yes or no)|是否開放雲端側錄|no|不允許側錄會議|
-|16.|Do you want to setup Jigasi Transcription: (yes or no)|是否開啟自動語音辨識功能？|no|需要額外付費|
+|15.|Do you want to setup Jibri Records Access via Nextcloud: (yes or no)|是否開放雲端側錄?|no|不允許側錄會議|
+|16.|Do you want to setup Jigasi Transcription: (yes or no)|是否開啟自動語音辨識功能?|no|需要額外付費|
+
+4. 再等待一下，系統將會自動重新啟動
+
+5. 試試看使用Chrome 瀏覽器 瀏覽網址  https://myjitsidemo.westus2.cloudapp.azure.com 
+
+
+## 5. 重要系統設定檔案
+
+|              |檔案    |說明|備註|
+|--------------|-------|---|---|
+|log           |/var/log/jitsi/jvb.log        |||
+|log           |/var/log/jitsi/jicofo.log     |||
+|log           |/var/log/prosody/prosody.log  |||  
+|JITSI設定檔    |/etc/jitsi/meet/myjitsidemo.westus2.cloudapp.azure.com-config.js| ||
+|JITSI介面設定檔|/usr/share/jitsi-meet/interface_config.js  | ||
+|nginx 設定    |/etc/nginx/sites-available/myjitsidemo.westus2.cloudapp.azure.com.conf||重新啟動sudo systemctl restart nginx.service && sudo nano /etc/jitsi/meet/myjitsidemo.westus2.cloudapp.azure.com-config.js|
+| Web Server Entry |/usr/share/jitsi-meet/| Jitsi meet home page|||
+| 靜態大頭貼    |/usr/share/jitsi-meet/images/avatar2.png|||
+|JIBRI錄影檔   |   /var/jbrecord |||
+|JIBRI錄影上傳  |  /home/jibri/finalize_recording.sh |||
+
