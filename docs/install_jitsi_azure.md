@@ -39,31 +39,36 @@ alt="Azure VM" width=80% border="10" /></a>
 ![登入](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/install_jitsi_azure_0020.png)
 
 2. 系統更新
-    1. 更新 apt
+   1. 更新 apt
 ```bash
 sudo apt update && 
 sudo apt upgrade && 
 sudo apt-get update && 
 sudo apt-get install sshfs
 ```
-    2. 安裝 nano
+
+   2. 安裝 nano
 ```bash
 sudo apt-get install nano
 ```
-    3. 下載安裝標準 linux 核心
-        * 下載  linux image
+
+   3. 下載安裝標準 linux 核心
+       * 下載  linux image
 ```bash
 sudo apt-get -y install linux-image-generic &&
 sudo update-grub
 ```
-        * 開啟 `/etc/default/grub` 
+
+       * 開啟 /etc/default/grub 
 ```bash
 sudo nano /etc/default/grub
 ```
-        * 設定 linux image
+
+       * 設定 linux image
       找到**GRUB_DEFAULT**，並修改為如下，Ctrl-X存檔
       GRUB_DEFAULT='1>2'
-        * 重新開機
+
+       * 重新開機
 ```bash
 sudo reboot now
 ```
