@@ -6,6 +6,8 @@
 https://jitsiym.aigia.ai/meet_ym.html
 
 
+docs/images/thesystem_architecture.png
+
 將提供step-by-step逐步指引
 只要跟著我們開發「陽明大學視訊系統」流程為藍本，再簡單修改即可輕鬆架設一套以Jitsi meet為基礎，開源安全的視訊系統。
 
