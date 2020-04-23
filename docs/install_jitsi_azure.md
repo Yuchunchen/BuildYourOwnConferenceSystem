@@ -130,4 +130,3 @@ sudo ./quick_jibri_installer.sh
 | 靜態大頭貼    |/usr/share/jitsi-meet/images/avatar2.png|||
 |JIBRI錄影檔   |   /var/jbrecord |||
 |JIBRI錄影上傳  |  /home/jibri/finalize_recording.sh |||
-
