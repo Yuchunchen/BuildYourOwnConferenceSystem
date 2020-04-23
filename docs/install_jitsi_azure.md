@@ -30,9 +30,23 @@ alt="Azure VM" width=80% border="10" /></a>
 |參數名稱|設定值|說明|
 |-------|-----|---|
 |登入帳號|jitsiadm||
-|登入密碼| .....|請您自行設定的12位密碼|
+|登入密碼| .....|您剛剛自行設定的12位密碼|
 |DNS名稱|myjitsidemo.westus2.cloudapp.azure.com|
 |SSH登入指令|`ssh jitsiadm@myjitsidemo.westus2.cloudapp.azure.com`|
 
 ## 3. 安裝 Jitsi meet 前置準備
-1. SSH 登入
+1. 您可以由畫面上面的連結(SSH 登入) 或者 左下角(序列主控台登入)
+![登入]](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/install_jitsi_azure_0020.png)
+
+2. 系統更新
+   * 更新 apt
+```zsh
+sudo apt update && 
+sudo apt upgrade && 
+sudo apt-get update && 
+sudo apt-get install sshfs
+```
+   * 安裝 nano
+```zsh
+sudo apt-get install nano
+```

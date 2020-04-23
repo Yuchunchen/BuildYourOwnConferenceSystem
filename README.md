@@ -48,9 +48,9 @@
 ## 系統安裝說明
 系統安裝主要分成後端Jitsi視訊主機架設以及視訊系統前台兩大部分。
 1. 安裝設定Jitsi meet系統後端
-   1. 使用 [Google 雲端](./doc/install_jitsi_google.md)
-   2. 使用 [Azure 雲端](./doc/install_jitsi_azure.md)
-2. [安裝視訊系統前台](./doc/install_conferencesystem.md)
+   1. 使用 [Azure 雲端](./docs/install_jitsi_azure.md)
+   2. 使用 [Google 雲端](./docs/install_jitsi_google.md)
+2. [安裝視訊系統前台](./docs/install_conferencesystem.md)
 3. 客製化視訊系統前台
 
 ## 相關應用
