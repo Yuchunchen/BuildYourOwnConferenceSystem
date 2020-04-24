@@ -14,7 +14,7 @@ sudo cp -arv ~/local2/src_meet_ym/libs   /usr/share/jitsi-meet/
 是的，這樣就完成囉，如果是 Azure雲端主機，您可以使用瀏覽器移至 https://myjitsidemo.westus2.cloudapp.azure.com
 您也可以下載APP，手機開會更便利！
 
-## 2. 重要系統設定檔案
+## 3. 重要系統設定檔案
 Jitsi meet 還有很多神奇功能可以調整唷，底下是一些常用到的檔案位置，您一定要動手試試看!
 依照您安裝的主機名稱(Azure:myjitsidemo.westus2.cloudapp.azure.com) ，檔名會有所不同，請注意替換唷！
 
