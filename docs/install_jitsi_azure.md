@@ -99,8 +99,7 @@ sudo ./quick_jibri_installer.sh
 |4.|Do you want to setup LetsEncrypt with your domain: (yes or no)|是否需要SSL加密？|yes||
 |5.|Do you want to setup the Dropbox feature now: (yes or no)|是否需要「錄影上傳dropbox」功能？|no|防止未經允許側錄會議|
 |6.|Do you want to install customized "brandless mode"?: (yes or no)|是否將Jitsi logo刪除？|no|建議保留jitsi logo|
-|7.|Do you want to translate 'Participant' to your own language? Leave empty to use the default one (English):|
-請將'Participant'翻譯成您的語言|Participant|不翻譯|
+|7.|Do you want to translate 'Participant' to your own language? Leave empty to use the default one (English):|請將'Participant'翻譯成您的語言|Participant|不翻譯|
 |8.|Do you want to translate 'me' to your own language?|將 me 翻譯成您的語言|me|不翻譯|
 |9.|Do you want to disable the Welcome page: (yes or no)|是否關閉系統預設之首頁?|yes|我們將使用客製化首頁|
 |10.|Do you want to enable static avatar?: (yes or no)|是否使用固定大頭貼?|yes|可自行選擇|
@@ -113,10 +112,14 @@ sudo ./quick_jibri_installer.sh
 
 4. 再等待一下，系統將會自動重新啟動
 
-5. 試試看使用Chrome 瀏覽器 瀏覽網址  https://myjitsidemo.westus2.cloudapp.azure.com 
+5. 試試看使用Chrome 瀏覽器 瀏覽網址 https://myjitsidemo.westus2.cloudapp.azure.com 
 
 
-## 5. 重要系統設定檔案
+## 5. 恭喜 :)
+您現在應該已經有專屬於您的視訊平台囉，接著我們將[安裝視訊系統前台](./docs/install_conferencesystem.md)，加上前端介面，讓系統更好用。
+
+## 6. 重要系統設定檔案
+Jitsi meet 還有很多神奇功能可以調整唷，底下是一些常用到的檔案位置，您一定要動手試試看!
 
 |              |檔案    |說明|備註|
 |--------------|-------|---|---|
@@ -128,5 +131,5 @@ sudo ./quick_jibri_installer.sh
 |nginx 設定    |/etc/nginx/sites-available/myjitsidemo.westus2.cloudapp.azure.com.conf||重新啟動sudo systemctl restart nginx.service && sudo nano /etc/jitsi/meet/myjitsidemo.westus2.cloudapp.azure.com-config.js|
 | Web Server Entry |/usr/share/jitsi-meet/| Jitsi meet home page|||
 | 靜態大頭貼    |/usr/share/jitsi-meet/images/avatar2.png|||
-|JIBRI錄影檔   |   /var/jbrecord |||
-|JIBRI錄影上傳  |  /home/jibri/finalize_recording.sh |||
+|JIBRI錄影檔   |/var/jbrecord |||
+|JIBRI錄影上傳  |/home/jibri/finalize_recording.sh |||
