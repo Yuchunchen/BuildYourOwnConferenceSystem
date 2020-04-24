@@ -3,7 +3,7 @@
 
 ## 動機
 2020全世界面臨武漢肺炎(新型冠狀病毒, COVID-19)威脅，使用視訊會議可以兼顧團隊工作效率、減少感染風險，可惜目前市面上部分視訊軟體有[資安隱憂](https://3c.ltn.com.tw/news/40047 "自由時報")，有的軟體設定過於複雜需要專門人員操作管理，更有些需要另外額外收取費用，反而影響參與視訊會議的使用體驗。<br>
-我們依照台灣機關學校視訊會議使用情境重新撰寫視訊系統，以[教育部](https://depart.moe.edu.tw/ED2700/News_Content.aspx?n=727087A8A1328DEE&s=868B3A6EDF9BA52D)、「台灣天才IT大臣」[唐鳳](https://3c.ltn.com.tw/news/40055)推薦使用的開源軟體[Jitsi meet](https://https://meet.jit.si/)為基礎，重新打造一套快速入手適用於台灣的視訊會議平台。<br>
+我們依照台灣機關學校視訊會議使用情境重新撰寫視訊系統，以[教育部](https://depart.moe.edu.tw/ED2700/News_Content.aspx?n=727087A8A1328DEE&s=868B3A6EDF9BA52D)、「台灣天才IT大臣」[唐鳳](https://3c.ltn.com.tw/news/40055)推薦使用的開源軟體[Jitsi meet](https://meet.jit.si/)為基礎，重新打造一套快速入手適用於台灣的視訊會議平台。<br>
 
 
 使用「快速架站懶人包」將有下列好處：
