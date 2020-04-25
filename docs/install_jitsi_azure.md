@@ -6,8 +6,8 @@ Jitsi meet對於硬體沒有特別要求，目前Azure提供12個月[免費使�
 ## 2. 建立雲端虛擬主機
 底下的影片我們將在Azure雲端建立一台虛擬主機(名稱為: myjitsidemo)，所需費用正好在Azure免費額度內，很適合預算有限的中小型機關學校。<br>
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=BMuAhTTeUYg
-" target="_blank"><img src="http://img.youtube.com/vi/BMuAhTTeUYg/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=--0RYO_zlOo
+" target="_blank"><img src="http://img.youtube.com/vi/--0RYO_zlOo/0.jpg" 
 alt="Azure VM" width=80% border="10" /></a>
 
 底下是過程中會需要用到的參數如下：
