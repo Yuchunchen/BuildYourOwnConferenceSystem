@@ -42,13 +42,13 @@ alt="Azure VM" width=80% border="10" /></a>
 ![DNS網域名稱設定](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/install_jitsi_dns_example.png)
 
 **!! 注意 !!** 一般網域名稱設定後，大約需要幾個小時才會生效，請您務必利用確認您的網域名稱生效後，才能繼續安裝。  
-您可以使用下列指令來確認網域名稱是否生效：
+您可以使用下列指令來確認網域名稱是否生效：  
 ****** Windows
-```nslookup 您的網域名稱```
+```nslookup 您的網域名稱```  
 ![Windows](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/install_jitsi_nslookup.png)
 
 ****** Mac, Linux
-```dig 您的網域名稱```
+```dig 您的網域名稱```  
 ![Mac](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/install_jitsi_dig.png)
 
 
