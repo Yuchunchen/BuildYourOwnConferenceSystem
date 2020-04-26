@@ -25,19 +25,19 @@ alt="Azure VM" width=80% border="10" /></a>
 |建立防火牆規則:指定的通訊協定和通訊埠|80,443,4443,5222,5347,10000-20000|tcp, udp都開啟以加快連線速度|
 
 跟隨著影片步驟，您的主機應該看起來像下圖:
-![虛擬主機](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/install_jitsi_googel0020.png)
+![虛擬主機](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/install_jitsi_google0020.png)
 
-請記下下列資訊，接下來會常常使用到
+請記下下列資訊，
 
 |參數名稱|設定值|說明|
 |-------|-----|---|
-|IP位址  |(影片中範例為:104.199.168.254)||
+|外部IP位址  |(影片中範例為:104.199.168.254)||
 
 
 ## 3. 建立主機的網域名稱(domain name)
 您一定要設定網域名稱才能安裝jitsi系統。原因是jitsi meet會使用大量內部伺服器，數字型態的IP位址無法使用。您必須跟學校/機關網路管理員申請，網路上有些免費網域服務伺服器可能可以試試看，有些學校有向Google購買G-suite服務，可能可以直接使用[G-suite名稱伺服器](https://support.google.com/a/answer/53929?hl=zh-Hant)，或者您可以花一點錢(每年約新台幣300-2000元)直接向Google[購買一個專屬您的網域名稱](https://www.wfublog.com/2019/04/google-domains-tw-purchase-transfer-godaddy-dns.html)，其他如[GoDaddy](https://tw.godaddy.com/domains/domain-name-search)、[Gandi](https://www.gandi.net/zh-Hant)都有提供便宜而且親善的中文介面。
 
-無論您使用哪一家的網域名稱，重點在於您必須增加一筆 A紀錄 (A record)，A記錄又稱為「地址記錄」(或主機記錄)，可將網域連結至代管網域服務的主機實體 IP 位址。
+無論您使用哪一家的網域名稱，重點在於您必須增加一筆 A紀錄 (A record)，A記錄又稱為「地址記錄」(或主機記錄)，可將網域連結至代管網域服務的主機實體 IP 位址。下面是我們使用網域伺服器使用畫面：
 
 ![DNS網域名稱設定](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/install_jitsi_dns_example.png)
 
