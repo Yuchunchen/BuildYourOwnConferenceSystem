@@ -3,8 +3,8 @@
 ## 1. Google 帳號 
 Jitsi meet對於硬體沒有特別要求，目前Google提供12個月[免費使用](https://cloud.google.com/free/?hl=zh-TW)，再加上額外美金300元試用金額，應該足以免費使用1年，是很好的開始。
 
-## 2. 建立雲端虛擬主機
-底下的影片我們將在Google雲端建立一台虛擬主機(名稱為: myjitsidemo)，所需費用正好在Google免費額度內，很適合預算有限的中小型機關學校。<br>
+## 2. 建立Google雲端虛擬主機
+只需要6分鐘，就可以建立您的雲端虛擬主機。請跟著下面的影片操作，我們在Google雲端建立一台虛擬主機，所需費用正好在Google免費額度內，很適合預算有限的中小型機關學校。<br>
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=AE1kr1gs9OQ
 " target="_blank"><img src="http://img.youtube.com/vi/AE1kr1gs9OQ/0.jpg" 
@@ -14,29 +14,37 @@ alt="Azure VM" width=80% border="10" /></a>
 
 |參數名稱|設定值|說明|
 |-------|-----|---|
-|資源群組|jitsidemo||
-|電腦名稱|myjitsidemo||
-|位置|台灣|目前這個位置的主機比較便宜|
-|登入帳號|jitsiadm||
-|登入密碼| .....|請您自行設定一組12位密碼|
-|DNS名稱標籤|myjitsidemo||
-|目的地連接埠範圍|80,443,4443,5222,5347,10000-20000||
+|專案名稱|jitsi-demo||
+|電腦名稱|my-jitsi-demo||
+|位置|台灣|放在台灣反應速度最佳|
+|開機磁碟|Ubuntu 18.04 LTS|作業系統|
+|保留靜態位址:名稱| ip-my-jitsi-demo || 
+|保留靜態位址:**外部位址**|xxx.xxx.xxx.xxx|您會獲得一組固定IP(影片中範例為:104.199.168.254)，請記下來|
+|建立防火牆規則:名稱| port-jitsi||
+|建立防火牆規則:來源IP範圍| 0.0.0.0/0 |不設限，您可以視需要設定|
+|建立防火牆規則:指定的通訊協定和通訊埠|80,443,4443,5222,5347,10000-20000|tcp, udp都開啟以加快連線速度|
 
 跟隨著影片步驟，您的主機應該看起來像下圖:
-![虛擬主機](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/install_jitsi_azure_0010.png)
+![虛擬主機](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/install_jitsi_googel0020.png)
 
 請記下下列資訊，接下來會常常使用到
 
 |參數名稱|設定值|說明|
 |-------|-----|---|
-|登入帳號|jitsiadm||
-|登入密碼| .....|您剛剛自行設定的12位密碼|
-|DNS名稱|myjitsidemo.westus2.cloudapp.azure.com|
-|SSH登入指令|`ssh jitsiadm@myjitsidemo.westus2.cloudapp.azure.com`|
+|IP位址  |(影片中範例為:104.199.168.254)||
 
-## 3. 安裝 Jitsi meet 前置準備
-1. 您可以由畫面上面的連結(SSH 登入) 或者 左下角(序列主控台登入)
-![登入](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/install_jitsi_azure_0020.png)
+
+## 3. 建立主機的網域名稱(domain name)
+您一定要設定網域名稱才能安裝jitsi系統。原因是jitsi meet會使用大量內部伺服器，數字型態的IP位址無法使用。您必須跟學校/機關網路管理員申請，網路上有些免費網域服務伺服器可能可以試試看，有些學校有向Google購買G-suite服務，可能可以直接使用[G-suite名稱伺服器](https://support.google.com/a/answer/53929?hl=zh-Hant)，或者您可以花一點錢(每年約新台幣300-2000元)直接向Google[購買一個專屬您的網域名稱](https://www.wfublog.com/2019/04/google-domains-tw-purchase-transfer-godaddy-dns.html)，其他如[GoDaddy](https://tw.godaddy.com/domains/domain-name-search)、[Gandi](https://www.gandi.net/zh-Hant)都有提供便宜而且親善的中文介面。
+
+無論您使用哪一家的網域名稱，重點在於您必須增加一筆 A紀錄 (A record)，A記錄又稱為「地址記錄」(或主機記錄)，可將網域連結至代管網域服務的主機實體 IP 位址。
+
+![DNS網域名稱設定](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/install_jitsi_dns_example.png)
+
+
+## 4. 安裝 Jitsi meet 前置準備
+1. Google雲端很貼心，不需要另外設定，您可以點擊畫面的SSH直接登入主機：   
+![登入](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/install_jitsi_google0020.png)
 
 2. 系統更新
 * 更新 apt
@@ -67,7 +75,7 @@ sudo nano /etc/default/grub
 sudo reboot now
 ```
 
-## 4. 安裝 Jitsi meet 
+## 5. 安裝 Jitsi meet 
 
 1. 下載 Jitsi 安裝程式
 雖然官方網站已提供安裝說明，但是仍有許多地方需要手工設定，經過測試，[SwITNet](https://github.com/switnet-ltd/quick-jibri-installer)所提供的快速安裝程序，可以省下不少設定帶來的挫折。
@@ -116,7 +124,7 @@ sudo ./quick_jibri_installer.sh
 5. 試試看使用Chrome 瀏覽器 瀏覽網址  https://myjitsidemo.westus2.cloudapp.azure.com 
 
 
-## 5. 重要系統設定檔案
+## 6. 重要系統設定檔案
 
 |              |檔案    |說明|備註|
 |--------------|-------|---|---|
