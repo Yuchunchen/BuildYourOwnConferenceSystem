@@ -118,8 +118,7 @@ sudo ./quick_jibri_installer.sh
 |4.|Do you want to setup LetsEncrypt with your domain: (yes or no)|是否需要SSL加密？|yes||
 |5.|Do you want to setup the Dropbox feature now: (yes or no)|是否需要「錄影上傳dropbox」功能？|no|防止未經允許側錄會議|
 |6.|Do you want to install customized "brandless mode"?: (yes or no)|是否將Jitsi logo刪除？|no|建議保留jitsi logo|
-|7.|Do you want to translate 'Participant' to your own language? Leave empty to use the default one (English):|
-請將'Participant'翻譯成您的語言|Participant|不翻譯|
+|7.|Do you want to translate 'Participant' to your own language? Leave empty to use the default one (English):|請將'Participant' 翻譯成您的語言|Participant|不翻譯|
 |8.|Do you want to translate 'me' to your own language?|將 me 翻譯成您的語言|me|不翻譯|
 |9.|Do you want to disable the Welcome page: (yes or no)|是否關閉系統預設之首頁?|yes|我們將使用客製化首頁|
 |10.|Do you want to enable static avatar?: (yes or no)|是否使用固定大頭貼?|yes|可自行選擇|
