@@ -102,7 +102,7 @@ sudo ./quick_jibri_installer.sh
 |7.|Do you want to translate 'Participant' to your own language? Leave empty to use the default one (English):|請將'Participant'翻譯成您的語言|Participant|不翻譯|
 |8.|Do you want to translate 'me' to your own language?|將 me 翻譯成您的語言|me|不翻譯|
 |9.|Do you want to disable the Welcome page: (yes or no)|是否關閉系統預設之首頁?|yes|我們將使用客製化首頁|
-|10.|Do you want to enable static avatar?: (yes or no)|是否使用固定大頭貼?|yes|可自行選擇|
+|10.|Do you want to enable static avatar?: (yes or no)|是否使用固定大頭貼?|yes|可自行選擇|
 |11.|Do you want to enable local audio recording option?: (yes or no)|是否開放與會者自行側錄？|no|不允許側錄會議|
 |12.|Do you want to enable secure rooms?: (yes or no)|是否開啟會議室帳號密碼管控？|yes||
 |13.|Set username for secure room moderator:|設定管理者帳號|ymteacher|請自行設定|
