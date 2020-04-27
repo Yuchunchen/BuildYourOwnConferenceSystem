@@ -132,7 +132,7 @@ sudo ./quick_jibri_installer.sh
 
 4. 再等待一下，系統將會自動重新啟動
 
-5. 試試看使用Chrome 瀏覽器 瀏覽網址  https://myjitsidemo.westus2.cloudapp.azure.com 
+5. 試試看使用Chrome 瀏覽器 瀏覽看看唷！
 
 
 ## 6. 重要系統設定檔案
