@@ -11,10 +11,25 @@ sudo cp -arv ~/local2/src_meet_ym/libs   /usr/share/jitsi-meet/
 ```
 
 ## 2. 收工了！
-是的，這樣就完成囉，如果是 Azure雲端主機，您可以使用瀏覽器移至 https://myjitsidemo.westus2.cloudapp.azure.com
-您也可以下載APP，手機開會更便利！
+是的，這樣就完成囉，趕快來看看安裝成果！  
+您可以先使用桌機或筆電，
+* 如果您安裝於Azure雲端主機，  
+  您可以使用瀏覽器移至 https://myjitsidemo.westus2.cloudapp.azure.com/meet_ym.html
+* 如果您安裝於Google雲端，自己取了網域名稱(hosthname)，  
+  您可以使用瀏覽器移至 https://hostname/meet_ym.html 
 
-## 3. 重要系統設定檔案
+您也可以依照網頁說明下載APP，隨時隨地手機開會超方便！
+
+## 4. 如何修改？
+根據這幾天回報，已經有許多朋友安裝成功，希望能夠更近一步修改為自己單位網頁，當然沒問題。   
+您只需要打開 meet_ym.html，您就可以修改網頁文字：  
+```bash
+sudo nano /usr/share/jitsi-meet/meet_ym.html
+```
+
+希望大家使用愉快！
+
+## 5. 重要系統設定檔案
 Jitsi meet 還有很多神奇功能可以調整唷，底下是一些常用到的檔案位置，您一定要動手試試看!
 依照您安裝的主機名稱(Azure:myjitsidemo.westus2.cloudapp.azure.com) ，檔名會有所不同，請注意替換唷！
 
