@@ -53,5 +53,7 @@
 2. [安裝視訊系統前台](./docs/install_conferencesystem.md)
 3. 客製化視訊系統前台
 
-## 相關應用
-1. [臺北榮民總醫院視訊門診系統](https://www.vghtpe.gov.tw/News!one.action?nid=6396)
+## 更多訊息
+1. [awesome-jitsi](https://github.com/Yuchunchen/awesome-jitsi) - jitsi 相關應用
+2. [臺北榮民總醫院視訊門診系統](https://www.vghtpe.gov.tw/News!one.action?nid=6396)
+
