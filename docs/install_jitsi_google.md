@@ -1,9 +1,19 @@
 # 如何將 Jitsi meet 安裝於 Google 雲端
 
-## 1. Google 帳號 
+- [如何將 Jitsi meet 安裝於 Google 雲端](#如何將-Jitsi-meet-安裝於-Google-雲端)
+    - [1. Google 帳號](#step1-Google-帳號)
+    - [2. 建立Google雲端虛擬主機](#step2-建立Google雲端虛擬主機)
+    - [3. 建立主機的網域名稱](#step3-建立主機的網域名稱domain-name)
+    - [4. 安裝 Jitsi meet 前置準備](#step4-安裝-Jitsi-meet-前置準備) 
+    - [5. 安裝 Jitsi meet ](#step5-安裝-Jitsi-meet)
+    - [6. 重要系統設定檔案](#step6.-重要系統設定檔案)
+
+---
+
+## step1. Google 帳號 
 Jitsi meet對於硬體沒有特別要求，目前Google提供12個月[免費使用](https://cloud.google.com/free/?hl=zh-TW)，再加上額外美金300元試用金額，應該足以免費使用1年，是很好的開始。
 
-## 2. 建立Google雲端虛擬主機
+## step2. 建立Google雲端虛擬主機
 只需要6分鐘，就可以建立您的雲端虛擬主機。請跟著下面的影片操作，我們在Google雲端建立一台虛擬主機，所需費用正好在Google免費額度內，很適合預算有限的中小型機關學校。<br>
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=AE1kr1gs9OQ
@@ -34,7 +44,7 @@ alt="Azure VM" width=80% border="10" /></a>
 |外部IP位址  |(影片中範例為:104.199.168.254)||
 
 
-## 3. 建立主機的網域名稱(domain name)
+## step3. 建立主機的網域名稱domain name
 您一定要設定網域名稱才能安裝jitsi系統。原因是jitsi meet會使用大量內部伺服器，數字型態IP位址無法使用。您必須跟學校/機關網路管理員申請，網路上有些免費網域服務伺服器可能可以試試看，有些學校有向Google購買G-suite服務，可能可以直接使用[G-suite名稱伺服器](https://support.google.com/a/answer/53929?hl=zh-Hant)，或者您可以花一點錢(每年約新台幣300-2000元)直接向Google[購買一個專屬您的網域名稱](https://www.wfublog.com/2019/04/google-domains-tw-purchase-transfer-godaddy-dns.html)，其他如[GoDaddy](https://tw.godaddy.com/domains/domain-name-search)、[Gandi](https://www.gandi.net/zh-Hant)..等都有提供便宜而且親善的中文介面。
 
 無論您使用哪一家的網域名稱，重點在於您必須增加一筆 A紀錄 (A record)，A記錄又稱為「地址記錄」(或主機記錄)，可將網域連結至代管網域服務的主機實體 IP 位址。下面是我們使用網域伺服器使用畫面：
@@ -53,7 +63,7 @@ alt="Azure VM" width=80% border="10" /></a>
 
 
 
-## 4. 安裝 Jitsi meet 前置準備
+## step4 安裝 Jitsi meet 前置準備
 1. Google雲端很貼心，不需要另外設定，您可以點擊畫面的SSH直接登入主機：   
 ![登入](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/install_jitsi_google0020.png)
 
@@ -86,7 +96,7 @@ sudo nano /etc/default/grub
 sudo reboot now
 ```
 
-## 5. 安裝 Jitsi meet 
+## step5. 安裝 Jitsi meet 
 
 1. 下載 Jitsi 安裝程式
 雖然官方網站已提供安裝說明，但是仍有許多地方需要手工設定，經過測試，[SwITNet](https://github.com/switnet-ltd/quick-jibri-installer)所提供的快速安裝程序，可以省下不少設定帶來的挫折。
@@ -134,7 +144,7 @@ sudo ./quick_jibri_installer.sh
 5. 試試看使用Chrome 瀏覽器 瀏覽看看唷！
 
 
-## 6. 重要系統設定檔案
+## step6. 重要系統設定檔案
 
 |              |檔案    |說明|備註|
 |--------------|-------|---|---|
