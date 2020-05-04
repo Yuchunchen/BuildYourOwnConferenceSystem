@@ -1,19 +1,19 @@
 # 如何將 Jitsi meet 安裝於 Azure 雲端
 
 - [如何將 Jitsi meet 安裝於 Azure 雲端](#如何將-Jitsi-meet-安裝於-Azure-雲端)
-    - [1. Azure 帳號](#1.-Azure-帳號)
-    - [2. 建立雲端虛擬主機](#2.-建立雲端虛擬主機)
-    - [3. 安裝 Jitsi meet 前置準備](#3.-安裝-Jitsi-meet-前置準備)
-    - [4. 安裝 Jitsi meet](#4.-安裝-Jitsi-meet) 
-    - [5. 恭喜 :)](#5.-恭喜-:))
-    - [6. 重要系統設定檔案](#6.-重要系統設定檔案)
+    - [1. Azure 帳號](#step1.-Azure-帳號)
+    - [2. 建立雲端虛擬主機](#step2.-建立雲端虛擬主機)
+    - [3. 安裝 Jitsi meet 前置準備](#step3.-安裝-Jitsi-meet-前置準備)
+    - [4. 安裝 Jitsi meet](#step4.-安裝-Jitsi-meet) 
+    - [5. 恭喜 :)](#step5.-恭喜)
+    - [6. 重要系統設定檔案](#step6.-重要系統設定檔案)
 
 ---
 
-## 1. Azure 帳號 
+## step1. Azure 帳號 
 Jitsi meet對於硬體沒有特別要求，目前Azure提供12個月[免費使用](https://azure.microsoft.com/zh-tw/free/)，再加上額外新台幣6100元試用金額，應該足以免費使用1年，是很好的開始。
 
-## 2. 建立雲端虛擬主機
+## step2. 建立雲端虛擬主機
 只需要5分鐘，就可以建立您的虛擬主機唷！請跟著下面影片，我們將在Azure雲端建立一台虛擬主機(名稱為: myjitsidemo)，所需費用正好在Azure免費額度內，很適合預算有限的中小型機關學校。<br>
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=K7RKF7ney6E
@@ -44,7 +44,7 @@ alt="Azure VM" width=80% border="10" /></a>
 |DNS名稱|myjitsidemo.westus2.cloudapp.azure.com|
 |SSH登入指令|`ssh jitsiadm@myjitsidemo.westus2.cloudapp.azure.com`|
 
-## 3. 安裝 Jitsi meet 前置準備
+## step3. 安裝 Jitsi meet 前置準備
 1. 您可以由畫面上面的連結(SSH 登入) 或者 左下角(序列主控台登入)
 ![登入](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/install_jitsi_azure_0020.png)
 
@@ -77,7 +77,7 @@ sudo nano /etc/default/grub
 sudo reboot now
 ```
 
-## 4. 安裝 Jitsi meet 
+## step4. 安裝 Jitsi meet 
 
 1. 下載 Jitsi 安裝程式
 雖然官方網站已提供安裝說明，但是仍有許多地方需要手工設定，經過測試，[SwITNet](https://github.com/switnet-ltd/quick-jibri-installer)所提供的快速安裝程序，可以省下不少設定帶來的挫折。
@@ -125,10 +125,10 @@ sudo ./quick_jibri_installer.sh
 5. 試試看使用Chrome 瀏覽器 瀏覽網址 https://myjitsidemo.westus2.cloudapp.azure.com 
 
 
-## 5. 恭喜 :)
+## step5. 恭喜
 您現在應該已經有專屬於您的視訊平台囉，接著我們將[安裝視訊系統前台](./docs/install_conferencesystem.md)，加上前端介面，讓系統更好用。
 
-## 6. 重要系統設定檔案
+## step6. 重要系統設定檔案
 Jitsi meet 還有很多神奇功能可以調整唷，底下是一些常用到的檔案位置，您一定要動手試試看!
 
 |              |檔案    |說明|備註|
