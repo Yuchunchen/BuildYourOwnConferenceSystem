@@ -35,7 +35,7 @@ sudo cp -arv ~/local2/src_meet_ym/libs   /usr/share/jitsi-meet/
 sudo nano /usr/share/jitsi-meet/meet_ym.html
 ```
 
-更進階的修改，可以參考[進階客製化](./install_customization.md)，您也可以[參考並且留下您的使用心得](https://github.com/Yuchunchen/awesome-jitsi)。
+更進階的修改，可以參考[進階客製化](./install_customization.md)，您也可以參考[「Jitsi 資源大全」](https://github.com/Yuchunchen/awesome-jitsi)並且留下您的使用心得唷！
 
 希望大家使用愉快！
 
