@@ -63,6 +63,7 @@
 3. [客製化視訊系統](./docs/install_customization.md)
 
 ## 更多訊息
-1. [awesome-jitsi](https://github.com/Yuchunchen/awesome-jitsi) - jitsi 相關應用
+1. [awesome-jitsi 「Jitsi 資源大全」](https://github.com/Yuchunchen/awesome-jitsi) - 有許多很酷的應用，更歡迎您留下您的成品，大家互相觀摩！
 2. [臺北榮民總醫院視訊門診系統](https://www.vghtpe.gov.tw/News!one.action?nid=6396)
+3. [新北市國中小校長使用Jitsi](https://udn.com/news/story/7323/4498815) - 新北市泰山區同榮國小蔡明貴校長帶領「新北校長科技領導社群」率先使用Jitsi
 
