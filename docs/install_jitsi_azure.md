@@ -1,12 +1,12 @@
 # 如何將 Jitsi meet 安裝於 Azure 雲端
 
 - [如何將 Jitsi meet 安裝於 Azure 雲端](#如何將-Jitsi-meet-安裝於-Azure-雲端)
-    - [1. Azure 帳號](#step1.-Azure-帳號)
-    - [2. 建立雲端虛擬主機](#step2.-建立雲端虛擬主機)
-    - [3. 安裝 Jitsi meet 前置準備](#step3.-安裝-Jitsi-meet-前置準備)
-    - [4. 安裝 Jitsi meet](#step4.-安裝-Jitsi-meet) 
-    - [5. 恭喜 :)](#step5.-恭喜)
-    - [6. 重要系統設定檔案](#step6.-重要系統設定檔案)
+    - [1. Azure 帳號](#step1-Azure-帳號)
+    - [2. 建立雲端虛擬主機](#step2-建立雲端虛擬主機)
+    - [3. 安裝 Jitsi meet 前置準備](#step3-安裝-Jitsi-meet-前置準備)
+    - [4. 安裝 Jitsi meet](#step4-安裝-Jitsi-meet) 
+    - [5. 恭喜 :)](#step5-恭喜)
+    - [6. 重要系統設定檔案](#step6-重要系統設定檔案)
 
 ---
 
