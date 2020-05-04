@@ -1,5 +1,15 @@
 # 如何將 Jitsi meet 安裝於 Azure 雲端
 
+- [如何將 Jitsi meet 安裝於 Azure 雲端](#如何將-Jitsi-meet-安裝於-Azure-雲端)
+    - [1. Azure 帳號](#1.-Azure-帳號)
+    - [2. 建立雲端虛擬主機](#2.-建立雲端虛擬主機)
+    - [3. 安裝 Jitsi meet 前置準備](#3.-安裝-Jitsi-meet-前置準備)
+    - [4. 安裝 Jitsi meet](#4.-安裝-Jitsi-meet) 
+    - [5. 恭喜 :)](#5.-恭喜-:))
+    - [6. 重要系統設定檔案](#6.-重要系統設定檔案)
+
+---
+
 ## 1. Azure 帳號 
 Jitsi meet對於硬體沒有特別要求，目前Azure提供12個月[免費使用](https://azure.microsoft.com/zh-tw/free/)，再加上額外新台幣6100元試用金額，應該足以免費使用1年，是很好的開始。
 
