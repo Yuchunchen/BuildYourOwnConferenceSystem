@@ -18,10 +18,10 @@ sudo nano /usr/share/jitsi-meet/libs/app.bundle.min.js
 ## 如何修改將錄影檔案上傳至雲端
 在完成錄影後，檔案會放置於 (/var/jbrecord) 目錄下，同時會執行 /home/jibri/finalize_recording.sh 命令，預設 finalize_recording.sh 不會進行任何動作，您可以自行修改此檔案。  
 
-### 利用 rclone 上傳至 Google, One drive 等雲端空間
+##### 1. 利用 rclone 上傳至 Google, One drive 等雲端空間
 [rclone](https://rclone.org/docs/) 可以將檔案上傳至雲端空間(目前支援37種！)，常見的Google, OneDrive, ftp, sftp, webdav 都在支援之列。這篇文章 [How-to to get a WORKING setup of Google Drive, One Drive or other cloud services in Jibri](https://community.jitsi.org/t/how-to-to-get-a-working-setup-of-google-drive-one-drive-or-other-cloud-services-in-jibri-my-comprehensive-tutorial-for-the-beginner/42228)是很重要的參考。
 
-### 上傳到NAS系統，再透過NAS介面下載
+##### 2. 上傳到NAS系統，再透過NAS介面下載
 可以參考 [這篇文章](https://community.jitsi.org/t/how-do-you-use-finalize-recordings-sh/28034/2)，使用者[toni](https://community.jitsi.org/u/toni)分享了他的 finalize_recording.sh 如下:  
 
 ```bash
