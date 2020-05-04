@@ -1,6 +1,13 @@
 # 客製化Jitsi更符合您的需求
 
-## 修改 「陽明視訊系統」
+- [客製化Jitsi更符合您的需求](#客製化Jitsi更符合您的需求)
+    - [修改「陽明視訊系統」](#修改「陽明視訊系統」)
+    - [修改首頁 Welcome page 文字](#修改首頁-welcome-page-文字)
+    - [如何修改將錄影檔案上傳至雲端](#如何修改將錄影檔案上傳至雲端)
+
+---
+
+## 修改「陽明視訊系統」
 隨著上述步驟安裝，您應該可以直接以 https://您的jitsi名稱/meet_ym.html (如：https://jitsiym.aigia.ai/meet_ym.html ) 方式進入系統試用，當然，您可以直接利用下列指令進行任意修改：
 ```bash
 sudo nano /usr/share/jitsi-meet/meet_ym.html
