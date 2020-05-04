@@ -4,6 +4,7 @@
     - [修改「陽明視訊系統」](#修改「陽明視訊系統」)
     - [修改首頁 Welcome page 文字](#修改首頁-welcome-page-文字)
     - [如何修改將錄影檔案上傳至雲端](#如何修改將錄影檔案上傳至雲端)
+    - [更多連結](#更多連結)
 
 ---
 
@@ -63,3 +64,7 @@ rm -r $remove
 exit 0
 
 ```
+
+## 更多連結
+* 您可以參考[「Jitsi 資源大全」](https://github.com/Yuchunchen/awesome-jitsi)，那裡有許多很酷的應用，更歡迎您留下您的成品，大家互相觀摩！世界更美好！
+* [easyjitsi](https://docs.easyjitsi.com/docs/config) 有些自訂化設定整理得不錯
