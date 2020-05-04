@@ -6,7 +6,7 @@
     - [3. 建立主機的網域名稱](#step3-建立主機的網域名稱domain-name)
     - [4. 安裝 Jitsi meet 前置準備](#step4-安裝-Jitsi-meet-前置準備) 
     - [5. 安裝 Jitsi meet ](#step5-安裝-Jitsi-meet)
-    - [6. 重要系統設定檔案](#step6.-重要系統設定檔案)
+    - [6. 重要系統設定檔案](#step6-重要系統設定檔案)
 
 ---
 
