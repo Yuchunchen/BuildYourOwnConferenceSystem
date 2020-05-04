@@ -51,7 +51,7 @@
    1. 使用 [Azure 雲端](./docs/install_jitsi_azure.md)
    2. 使用 [Google 雲端](./docs/install_jitsi_google.md)
 2. [安裝視訊系統前台](./docs/install_conferencesystem.md)
-3. 客製化視訊系統前台
+3. [客製化視訊系統](./docs/install_customization.md)
 
 ## 更多訊息
 1. [awesome-jitsi](https://github.com/Yuchunchen/awesome-jitsi) - jitsi 相關應用
