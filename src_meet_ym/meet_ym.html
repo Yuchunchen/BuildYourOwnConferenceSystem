@@ -41,6 +41,7 @@
   <link href="css/styles.css" rel="stylesheet" />
   
   <script>
+    const my_domain='jitsiym.aigia.ai'; // -----> 請改成您的網域名稱, 不需要加上  https://
     var lectureroom;
     var lecturename;
     var lecturepass;
@@ -67,7 +68,7 @@
       lectureJID = getroomJID(lecturename);
       if (lecturename && lecturename.replace(/\s/g, "")) {
         lecturename = lecturename.replace(/\s/g, "")
-        const domain = 'jitsiym.aigia.ai';
+        const domain = my_domain;
         const options = {
           roomName: lectureJID,
           width: 600,
