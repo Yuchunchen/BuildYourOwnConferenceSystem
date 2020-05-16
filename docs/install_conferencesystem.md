@@ -29,7 +29,7 @@ sudo cp -arv ~/local2/src_meet_ym/libs   /usr/share/jitsi-meet/
 ```bash
 sudo nano /usr/share/jitsi-meet/meet_ym.html
 ```
-(https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/add_my_domain.png "修改您的網域名稱")
+![修改您的網域名稱](https://github.com/Yuchunchen/BuildYourOwnConferenceSystem/blob/master/docs/images/add_my_domain.png "修改您的網域名稱")
 
 ## step3. 收工了
 是的，這樣就完成囉，趕快來看看安裝成果！  
